@@ -1,3 +1,10 @@
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
 const aprendices = [
   { nombre: "Ana", nota: 4.5, programa: "ADSO" },
   { nombre: "Luis", nota: 2.8, programa: "ADSO" },
@@ -35,17 +42,14 @@ function ordenarNotas() {
 
 // menú
 function menu() {
-  let opcion;
-
-  while (opcion !== "6") {
-    opcion = prompt(`
+  rl.question(`
 1. Promedio
 2. Multiplicar notas
 3. Mostrar aprendices
 4. Aprobados
 5. Ordenar
 6. Salir
-`);
+Elige una opción: `, (opcion) => {
 
     switch (opcion) {
       case "1":
@@ -65,11 +69,14 @@ function menu() {
         break;
       case "6":
         console.log("Saliendo...");
-        break;
+        rl.close();
+        return;
       default:
         console.log("Opción inválida");
     }
-  }
+
+    menu();
+  });
 }
 
 menu();
