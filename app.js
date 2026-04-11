@@ -21,3 +21,36 @@ function multiplicarNotas() {
 }
 
 multiplicarNotas();
+
+function menu() {
+  let opcion;
+
+  while (opcion !== "4") {
+    opcion = prompt(`
+1. Calcular promedio
+2. Multiplicar notas
+3. Mostrar aprendices
+4. Salir
+    `);
+
+    switch (opcion) {
+      case "1":
+        calcularPromedio();
+        break;
+      case "2":
+        multiplicarNotas();
+        break;
+      case "3":
+        console.log(aprendices);
+        break;
+      case "4":
+        console.log("Saliendo...");
+        break;
+      default:
+        console.log("Opción inválida");
+    }
+  }
+}
+
+menu();
+
