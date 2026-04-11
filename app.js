@@ -39,17 +39,25 @@ function ordenarNotas() {
   const ordenados = [...aprendices].sort((a, b) => b.nota - a.nota);
   console.log("Ordenados:", ordenados);
 }
+function preguntar(texto) {
+  return new Promise((resolve) => {
+    rl.question(texto, resolve);
+  });
+}
 
-// menú
-function menu() {
-  rl.question(`
+// menú con while
+async function menu() {
+  let opcion = "";
+
+  while (opcion !== "6") {
+    opcion = await preguntar(`
 1. Promedio
 2. Multiplicar notas
 3. Mostrar aprendices
 4. Aprobados
 5. Ordenar
 6. Salir
-Elige una opción: `, (opcion) => {
+Elige una opción: `);
 
     switch (opcion) {
       case "1":
@@ -70,13 +78,11 @@ Elige una opción: `, (opcion) => {
       case "6":
         console.log("Saliendo...");
         rl.close();
-        return;
+        break;
       default:
         console.log("Opción inválida");
     }
-
-    menu();
-  });
+  }
 }
 
 menu();
