@@ -23,7 +23,7 @@ function mostrarAprendices() {
   });
 }
 
-// Aprobados
+// Aprobados (filter)
 function mostrarAprobados() {
   const aprobados = aprendices.filter(a => a.nota >= 3);
 
@@ -33,7 +33,7 @@ function mostrarAprobados() {
   });
 }
 
-// Reprobados
+// Reprobados (filter)
 function mostrarReprobados() {
   const reprobados = aprendices.filter(a => a.nota < 3);
 
@@ -51,8 +51,14 @@ function nombresMayusculas() {
 
 // Reduce
 function calcularPromedio() {
+  if (aprendices.length === 0) {
+    console.log("No hay aprendices");
+    return;
+  }
+
   const suma = aprendices.reduce((acc, a) => acc + a.nota, 0);
   const promedio = suma / aprendices.length;
+
   console.log("\nPromedio:", promedio.toFixed(2));
 }
 
@@ -66,7 +72,7 @@ function ordenarNotas() {
   });
 }
 
-// Clasificación
+// Clasificación con switch
 function clasificarNota(nota) {
   let nivel;
 
@@ -87,12 +93,12 @@ function clasificarNota(nota) {
   console.log(`Nivel: ${nivel}`);
 }
 
-// Promesa
+// Promesa para entrada
 function preguntar(texto) {
   return new Promise(resolve => rl.question(texto, resolve));
 }
 
-// Menú
+// Menú con while
 async function menu() {
   let opcion = "";
 
@@ -109,12 +115,24 @@ async function menu() {
 Seleccione una opción: `);
 
     switch (opcion) {
-      case "1": mostrarAprendices(); break;
-      case "2": mostrarAprobados(); break;
-      case "3": mostrarReprobados(); break;
-      case "4": nombresMayusculas(); break;
-      case "5": calcularPromedio(); break;
-      case "6": ordenarNotas(); break;
+      case "1":
+        mostrarAprendices();
+        break;
+      case "2":
+        mostrarAprobados();
+        break;
+      case "3":
+        mostrarReprobados();
+        break;
+      case "4":
+        nombresMayusculas();
+        break;
+      case "5":
+        calcularPromedio();
+        break;
+      case "6":
+        ordenarNotas();
+        break;
       case "7":
         const nota = await preguntar("Ingrese la nota: ");
         clasificarNota(parseFloat(nota));
