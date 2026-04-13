@@ -6,6 +6,8 @@ const aprendices = [
   { nombre: "Sofia", nota: 5.0, programa: "Diseño Web" }
 ];
 
+console.log("Sistema iniciado");
+
 function calcularPromedio() {
   if (aprendices.length === 0) {
     console.log("No hay aprendices");
