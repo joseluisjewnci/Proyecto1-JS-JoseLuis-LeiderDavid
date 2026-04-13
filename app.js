@@ -12,9 +12,7 @@ function ordenarNotas() {
   const ordenados = [...aprendices].sort((a, b) => b.nota - a.nota);
 
   console.log("Aprendices ordenados de mayor a menor:");
-
   ordenados.forEach(a => {
     console.log(`${a.nombre} - ${a.nota}`);
   });
 }
-
