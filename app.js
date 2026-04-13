@@ -12,5 +12,3 @@ function multiplicarNotas() {
   const resultado = aprendices.map(a => a.nota * 2);
   console.log("Notas multiplicadas:", resultado);
 }
-
-multiplicarNotas();
