@@ -12,7 +12,6 @@ function mostrarAprobados() {
   const aprobados = aprendices.filter(a => a.nota >= 3);
 
   console.log("Aprendices aprobados:");
-
   aprobados.forEach(a => {
     console.log(`${a.nombre} - ${a.nota}`);
   });
