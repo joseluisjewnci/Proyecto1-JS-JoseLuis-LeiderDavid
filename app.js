@@ -8,7 +8,7 @@ const aprendices = [
 
 console.log("Sistema iniciado");
 
-function multiplicarNotas() {
-  const resultado = aprendices.map(a => a.nota * 2);
-  console.log("Notas multiplicadas:", resultado);
+function nombresMayusculas() {
+  const nombres = aprendices.map(a => a.nombre.toUpperCase());
+  console.log("Nombres en mayúsculas:", nombres);
 }
