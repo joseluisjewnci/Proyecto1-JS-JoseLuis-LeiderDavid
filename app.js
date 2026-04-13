@@ -12,5 +12,3 @@ function ordenarNotas() {
   const ordenados = [...aprendices].sort((a, b) => b.nota - a.nota);
   console.log("Ordenados:", ordenados);
 }
-
-ordenarNotas();
