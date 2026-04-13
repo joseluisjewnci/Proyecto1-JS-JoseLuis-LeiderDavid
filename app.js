@@ -14,9 +14,7 @@ const aprendices = [
 ];
 
 function preguntar(texto) {
-  return new Promise((resolve) => {
-    rl.question(texto, resolve);
-  });
+  return new Promise(resolve => rl.question(texto, resolve));
 }
 
 async function menu() {
@@ -25,7 +23,7 @@ async function menu() {
   while (opcion !== "7") {
     opcion = await preguntar(`
 1. Promedio
-2. Nombres en mayúsculas
+2. Map
 3. Mostrar aprendices
 4. Aprobados
 5. Reprobados
@@ -41,7 +39,7 @@ Elige una opción: `);
         console.log("Función map pendiente");
         break;
       case "3":
-        console.log("Función mostrar aprendices pendiente");
+        console.log(aprendices);
         break;
       case "4":
         console.log("Función aprobados pendiente");
