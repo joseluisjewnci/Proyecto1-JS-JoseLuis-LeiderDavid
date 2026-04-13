@@ -13,6 +13,8 @@ const aprendices = [
   { nombre: "Sofia", nota: 5.0, programa: "Diseño Web" }
 ];
 
+console.log("Sistema de Gestión de Notas iniciado");
+
 // Mostrar aprendices
 function mostrarAprendices() {
   console.log("\nLista de aprendices:");
@@ -21,38 +23,50 @@ function mostrarAprendices() {
   });
 }
 
-// filter - aprobados
+// Aprobados
 function mostrarAprobados() {
   const aprobados = aprendices.filter(a => a.nota >= 3);
-  console.log("\nAprobados:", aprobados);
+
+  console.log("\nAprendices aprobados:");
+  aprobados.forEach(a => {
+    console.log(`${a.nombre} - ${a.nota}`);
+  });
 }
 
-// filter - reprobados
+// Reprobados
 function mostrarReprobados() {
   const reprobados = aprendices.filter(a => a.nota < 3);
-  console.log("\nReprobados:", reprobados);
+
+  console.log("\nAprendices reprobados:");
+  reprobados.forEach(a => {
+    console.log(`${a.nombre} - ${a.nota}`);
+  });
 }
 
-// map
+// Map
 function nombresMayusculas() {
   const nombres = aprendices.map(a => a.nombre.toUpperCase());
   console.log("\nNombres en mayúsculas:", nombres);
 }
 
-// reduce
+// Reduce
 function calcularPromedio() {
   const suma = aprendices.reduce((acc, a) => acc + a.nota, 0);
   const promedio = suma / aprendices.length;
   console.log("\nPromedio:", promedio.toFixed(2));
 }
 
-// sort
+// Sort
 function ordenarNotas() {
   const ordenados = [...aprendices].sort((a, b) => b.nota - a.nota);
-  console.log("\nOrdenados:", ordenados);
+
+  console.log("\nAprendices ordenados de mayor a menor:");
+  ordenados.forEach(a => {
+    console.log(`${a.nombre} - ${a.nota}`);
+  });
 }
 
-//  clasificación con switch
+// Clasificación
 function clasificarNota(nota) {
   let nivel;
 
@@ -73,12 +87,12 @@ function clasificarNota(nota) {
   console.log(`Nivel: ${nivel}`);
 }
 
-// Promesa para leer datos
+// Promesa
 function preguntar(texto) {
   return new Promise(resolve => rl.question(texto, resolve));
 }
 
-// menú con while
+// Menú
 async function menu() {
   let opcion = "";
 
@@ -95,24 +109,12 @@ async function menu() {
 Seleccione una opción: `);
 
     switch (opcion) {
-      case "1":
-        mostrarAprendices();
-        break;
-      case "2":
-        mostrarAprobados();
-        break;
-      case "3":
-        mostrarReprobados();
-        break;
-      case "4":
-        nombresMayusculas();
-        break;
-      case "5":
-        calcularPromedio();
-        break;
-      case "6":
-        ordenarNotas();
-        break;
+      case "1": mostrarAprendices(); break;
+      case "2": mostrarAprobados(); break;
+      case "3": mostrarReprobados(); break;
+      case "4": nombresMayusculas(); break;
+      case "5": calcularPromedio(); break;
+      case "6": ordenarNotas(); break;
       case "7":
         const nota = await preguntar("Ingrese la nota: ");
         clasificarNota(parseFloat(nota));
