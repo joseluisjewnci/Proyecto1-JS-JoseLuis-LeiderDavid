@@ -15,5 +15,5 @@ function ordenarNotas() {
   ordenados.forEach(a => {
     console.log( '${a.nombre} - ${a.nota}');
   });
-}
+
 
