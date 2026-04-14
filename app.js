@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const aprendices = [
   { nombre: "Ana", nota: 4.5, programa: "ADSO" },
   { nombre: "Luis", nota: 2.8, programa: "ADSO" },
@@ -10,7 +9,7 @@ const aprendices = [
 console.log("Sistema iniciado");
 
 mostrarAprobados(){
-    const aprobados = aprendices.filter(a => a.nota >=3);
+const aprobados = aprendices.filter(a => a.nota >=3);
 
 console.log("Aprendices apreobados:");
 aprobados.forEach(a =>{console.log('${a.nombre} - $ {a.nota}');
@@ -18,5 +17,3 @@ aprobados.forEach(a =>{console.log('${a.nombre} - $ {a.nota}');
 
 }
 
-=======
->>>>>>> 78a5b3c7ae5784d44a5f079bd8ed0c3e03dce334
