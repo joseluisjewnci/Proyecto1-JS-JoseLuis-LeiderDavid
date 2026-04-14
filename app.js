@@ -8,9 +8,13 @@ const aprendices = [
 
 console.log("Sistema iniciado");
 
-function mostrarAprobados() {
-  const aprobados = aprendices.filter(a => a.nota >= 3);
-  console.log("Aprobados:", aprobados);
+mostrarAprobados(){
+    const aprobados = aprendices.filter(a => a.notas >=3);
+
+console.log("Aprendices apreobados:");
+aprobados.forEach(a =>{console.log('${a.nombre} - $ {a.nota}');
+});    
+
 }
 
 mostrarAprobados();
