@@ -8,12 +8,12 @@ const aprendices = [
 
 console.log("Sistema iniciado");
 
-mostrarAprobados(){
-const aprobados = aprendices.filter(a => a.nota >=3);
+function ordenarNotas() {
+  const ordenados = [...aprendices].sort((a, b) => b.nota - a.nota);
 
-console.log("Aprendices apreobados:");
-aprobados.forEach(a =>{console.log('${a.nombre} - $ {a.nota}');
-});    
-
+  console.log("Aprendices ordenados de mayor a menor:");
+  ordenados.forEach(a => {
+    console.log( '${a.nombre} - ${a.nota}');
+  });
 }
 
