@@ -13,6 +13,12 @@ const aprendices = [
   { nombre: "Sofia", nota: 5.0, programa: "Diseño Web" }
 ];
 
+console.log("Sistema iniciado");
+
+function nombresMayusculas() {
+  const nombres = aprendices.map(a => a.nombre.toUpperCase());
+  console.log("Nombres en mayúsculas:", nombres);
+}
 console.log("Sistema de Gestión de Notas iniciado");
 
 // Mostrar aprendices
