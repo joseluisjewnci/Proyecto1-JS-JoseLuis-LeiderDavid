@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const aprendices = [
   { nombre: "Ana", nota: 4.5, programa: "ADSO" },
   { nombre: "Luis", nota: 2.8, programa: "ADSO" },
@@ -17,3 +18,5 @@ aprobados.forEach(a =>{console.log('${a.nombre} - $ {a.nota}');
 
 }
 
+=======
+>>>>>>> 78a5b3c7ae5784d44a5f079bd8ed0c3e03dce334
