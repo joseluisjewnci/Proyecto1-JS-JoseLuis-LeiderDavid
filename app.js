@@ -6,5 +6,5 @@ const aprendices = [
   { nombre: "Sofia", nota: 5.0, programa: "Diseño Web" }
 ];
 
-console.log("Sistema iniciado")
+console.log("Sistema iniciado");
 
