@@ -60,4 +60,4 @@ Elige una opción: `);
   }
 }
 
-menu()
+menu();
