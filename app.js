@@ -7,3 +7,4 @@ const aprendices = [
 ];
 
 console.log("Sistema iniciado");
+
