@@ -18,4 +18,3 @@ const promedio = suma / aprendices.length;
 console.log("promedio:", promedio.toFixed(2));
 }
 
-calcularPromedio();
