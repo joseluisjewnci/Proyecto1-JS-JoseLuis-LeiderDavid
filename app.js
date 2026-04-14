@@ -10,5 +10,5 @@ console.log("Sistema iniciado");
 
 function nombresMayusculas() {
   const nombres = aprendices.map(a => a.nombre.toUpperCase());
-  console.log("Nombres en mayúsculas:", nombres);
+  console.log("Nombres en mayúsculas:", nombres)
 }
